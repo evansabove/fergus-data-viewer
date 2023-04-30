@@ -22,7 +22,7 @@ class UserInterface:
         return ''
     
     def write_text(self, text, x, y, font):
-        self.text((x, y), text, self.inky_display.BLACK, font)
+        self.draw.text((x, y), text, self.inky_display.BLACK, font)
         self.inky_display.set_image(self.img)
         self.inky_display.show()
     
