@@ -1,5 +1,6 @@
 from PIL import Image, ImageFont, ImageDraw
 from inky.auto import auto
+import time
 
 class UserInterface:
     inky_display = auto()
@@ -24,6 +25,13 @@ class UserInterface:
         yPosition = (self.inky_display.HEIGHT / 2) - (height / 2)
 
         self.write_text(text, xPosition, yPosition, font)
+        time.sleep(5)
+        self.write_text('BOXES', xPosition, yPosition, font)
+        time.sleep(5)
+        self.write_text('CARROT', xPosition, yPosition, font)
+        time.sleep(5)
+        self.write_text('BANANA', xPosition, yPosition, font)
+
     
     def write_text(self, text, x, y, font):
         self.draw.text((x, y), text, self.inky_display.BLACK, font)
