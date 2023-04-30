@@ -3,6 +3,7 @@ from data_connector import DataConnector
 import obd
 from argparse import ArgumentParser
 from user_interface import UserInterface
+import time
 
 data_points = [obd.commands.COOLANT_TEMP]
 live_data = { i.name : None for i in data_points }
@@ -29,6 +30,7 @@ if __name__ == "__main__":
 
         while True:
             ui.write('COOLANT TEMP', str(live_data['COOLANT_TEMP']))
+            time.sleep(10)
 
     except KeyboardInterrupt:
         data_connector.stop()
