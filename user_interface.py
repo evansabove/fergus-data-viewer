@@ -25,14 +25,9 @@ class UserInterface:
         yPosition = (self.inky_display.HEIGHT / 2) - (height / 2)
 
         self.write_text(text, xPosition, yPosition, font)
-        time.sleep(5)
-        self.write_text('BOXES', xPosition, yPosition, font)
         self.inky_display.show()
         time.sleep(5)
-        self.write_text('CARROT', xPosition, yPosition, font)
-        time.sleep(5)
-        self.write_text('BANANA', xPosition, yPosition, font)
-
+        self.draw.rectangle((0, 0, self.inky_display.WIDTH, self.inky_display.HEIGHT), fill=(0, 0, 0, 0))
     
     def write_text(self, text, x, y, font):
         self.draw.text((x, y), text, self.inky_display.BLACK, font)
