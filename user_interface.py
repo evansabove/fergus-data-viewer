@@ -48,5 +48,5 @@ class UserInterface:
 
         self.write_text(text, xPosition, yPosition, font)
 
-    def get_font(size):
+    def get_font(self, size):
         return ImageFont.truetype('Roboto-Medium.ttf', size)
