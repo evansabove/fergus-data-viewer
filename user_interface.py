@@ -17,8 +17,8 @@ class UserInterface:
 
     def show_splash_screen(self):
         text = "FERGUS"
-        width, height = self.label_font.getsize(text)
-        font = ImageFont.truetype('Roboto-Medium.ttf', 50)
+        font = self.get_font(50)
+        width, height = font.getsize(text)
 
         xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
         yPosition = (self.inky_display.HEIGHT / 2) - (height / 2)
@@ -31,8 +31,8 @@ class UserInterface:
         self.inky_display.show()
     
     def write_label(self, text):
-        width, height = self.label_font.getsize(text)
-        font = ImageFont.truetype('Roboto-Medium.ttf', 20)
+        font = self.get_font(20)
+        width, height = font.getsize(text)
 
         xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
         yPosition = (self.inky_display.HEIGHT / 4)*3 - (height / 2)
@@ -40,10 +40,13 @@ class UserInterface:
         self.write_text(text, xPosition, yPosition, font)
 
     def write_value(self, text):
-        width, height = self.value_font.getsize(text)
-        font = ImageFont.truetype('Roboto-Medium.ttf', 40)
+        font = self.get_font(40)
+        width, height = font.getsize(text)
 
         xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
         yPosition = (self.inky_display.HEIGHT / 3) - (height / 2)
 
         self.write_text(text, xPosition, yPosition, font)
+
+    def get_font(size):
+        return ImageFont.truetype('Roboto-Medium.ttf', size)
