@@ -27,6 +27,7 @@ class UserInterface:
         self.write_text(text, xPosition, yPosition, font)
         time.sleep(5)
         self.write_text('BOXES', xPosition, yPosition, font)
+        self.inky_display.show()
         time.sleep(5)
         self.write_text('CARROT', xPosition, yPosition, font)
         time.sleep(5)
@@ -36,7 +37,6 @@ class UserInterface:
     def write_text(self, text, x, y, font):
         self.draw.text((x, y), text, self.inky_display.BLACK, font)
         self.inky_display.set_image(self.img)
-        self.inky_display.show()
     
     def write_label(self, text):
         font = self.get_font(20)
