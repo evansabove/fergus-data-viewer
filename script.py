@@ -28,7 +28,7 @@ if __name__ == "__main__":
         data_connector_thread.start()
 
         while True:
-            ui.write('COOLANT TEMP', live_data['COOLANT_TEMP'])
+            ui.write('COOLANT TEMP', str(live_data['COOLANT_TEMP']))
 
     except KeyboardInterrupt:
         data_connector.stop()
