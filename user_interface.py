@@ -28,6 +28,10 @@ class UserInterface:
         self.inky_display.set_image(self.img)
         self.inky_display.show()
 
+        self.draw.rectangle((0, 0, self.inky_display.WIDTH, self.inky_display.HEIGHT), fill=(255, 255, 255))
+        self.inky_display.set_image(self.img)
+        self.inky_display.show()
+
         self.draw.text((xPosition, yPosition), 'fergus', self.inky_display.BLACK, font)
         self.inky_display.set_image(self.img)
         self.inky_display.show()
