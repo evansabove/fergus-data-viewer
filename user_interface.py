@@ -28,6 +28,8 @@ class UserInterface:
         self.inky_display.show()
         time.sleep(5)
         self.draw.rectangle((0, 0, self.inky_display.WIDTH, self.inky_display.HEIGHT), fill=(0, 0, 0, 0))
+        self.inky_display.show()
+
     
     def write_text(self, text, x, y, font):
         self.draw.text((x, y), text, self.inky_display.BLACK, font)
