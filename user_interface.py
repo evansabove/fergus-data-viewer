@@ -2,9 +2,6 @@ from PIL import Image, ImageFont, ImageDraw
 from inky.auto import auto
 
 class UserInterface:
-    label_font = ImageFont.truetype('Roboto-Medium.ttf', 20)
-    value_font = ImageFont.truetype('Roboto-Medium.ttf', 40)
-
     inky_display = auto()
     inky_display.set_border(inky_display.BLACK)
 
@@ -18,8 +15,15 @@ class UserInterface:
         self.img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
         self.draw = ImageDraw.Draw(self.img)
 
-    def show_splash_screen():
-        return ''
+    def show_splash_screen(self):
+        text = "FERGUS"
+        width, height = self.label_font.getsize(text)
+        font = ImageFont.truetype('Roboto-Medium.ttf', 50)
+
+        xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
+        yPosition = (self.inky_display.HEIGHT / 2) - (height / 2)
+
+        self.write_text(text, xPosition, yPosition, font)
     
     def write_text(self, text, x, y, font):
         self.draw.text((x, y), text, self.inky_display.BLACK, font)
@@ -28,16 +32,18 @@ class UserInterface:
     
     def write_label(self, text):
         width, height = self.label_font.getsize(text)
+        font = ImageFont.truetype('Roboto-Medium.ttf', 20)
 
         xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
         yPosition = (self.inky_display.HEIGHT / 4)*3 - (height / 2)
 
-        self.write_text(text, xPosition, yPosition, self.label_font)
+        self.write_text(text, xPosition, yPosition, font)
 
     def write_value(self, text):
         width, height = self.value_font.getsize(text)
+        font = ImageFont.truetype('Roboto-Medium.ttf', 40)
 
         xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
         yPosition = (self.inky_display.HEIGHT / 3) - (height / 2)
 
-        self.write_text(text, xPosition, yPosition, self.value_font)
+        self.write_text(text, xPosition, yPosition, font)

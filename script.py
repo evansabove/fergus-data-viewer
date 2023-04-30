@@ -11,11 +11,8 @@ ui = UserInterface()
 def update_screen():
     print(live_data)
 
-def show_splash_screen():
-    ui.write_label("Fergus")
-
 if __name__ == "__main__":
-    show_splash_screen()
+    ui.show_splash_screen()
 
     parser = ArgumentParser()
     parser.add_argument("--mock", default=False)
