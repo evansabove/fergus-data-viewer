@@ -29,7 +29,7 @@ if __name__ == "__main__":
         data_connector_thread.start()
 
         while True:
-            ui.write('Coolant', str(live_data['COOLANT_TEMP']))
+            ui.write('Coolant', str(live_data['COOLANT_TEMP']) + "°C")
             time.sleep(10)
 
     except KeyboardInterrupt:

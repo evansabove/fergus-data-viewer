@@ -33,7 +33,7 @@ class UserInterface:
         label_y = (self.inky_display.HEIGHT / 4)*3 - (label_height / 2)
 
         value_font = self.get_font(40)
-        value_width, value_height = value_font.getsize(label)
+        value_width, value_height = value_font.getsize(value)
 
         value_x = (self.inky_display.WIDTH / 2) - (value_width / 2)
         value_y = (self.inky_display.HEIGHT / 3) - (value_height / 2)
