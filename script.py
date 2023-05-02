@@ -29,6 +29,9 @@ if __name__ == "__main__":
         data_connector_thread.start()
 
         while True:
+            if(live_data['COOLANT_TEMP'] is None):
+                continue
+            
             ui.write('Coolant', str(live_data['COOLANT_TEMP']) + "°C")
             time.sleep(10)
 
