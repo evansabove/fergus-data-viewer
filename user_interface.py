@@ -45,4 +45,4 @@ class UserInterface:
         self.inky_display.show()
     
     def get_font(self, size):
-        return ImageFont.truetype('Roboto-Medium.ttf', size)
+        return ImageFont.truetype('/home/andy/fergus-data-viewer/Roboto-Medium.ttf', size) #change this
