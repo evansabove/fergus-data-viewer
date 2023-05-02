@@ -36,7 +36,7 @@ class UserInterface:
         value_width, value_height = value_font.getsize(label)
 
         value_x = (self.inky_display.WIDTH / 2) - (value_width / 2)
-        value_y = (self.inky_display.HEIGHT / 4)*3 - (value_height / 2)
+        value_y = (self.inky_display.HEIGHT / 3) - (value_height / 2)
         
         draw.text((label_x, label_y), value, self.inky_display.BLACK, label_font)
         draw.text((value_x, value_y), value, self.inky_display.BLACK, value_font)
