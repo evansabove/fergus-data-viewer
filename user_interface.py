@@ -41,7 +41,7 @@ class UserInterface:
         draw.text((label_x, label_y), value, self.inky_display.BLACK, label_font)
         draw.text((value_x, value_y), value, self.inky_display.BLACK, value_font)
 
-        self.inky_display.set_image(self.img)
+        self.inky_display.set_image(img)
         self.inky_display.show()
     
     def get_font(self, size):
