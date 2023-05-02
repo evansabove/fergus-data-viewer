@@ -12,10 +12,15 @@ class UserInterface:
         font = self.get_font(50)
         width, height = font.getsize(text)
 
-        xPosition = (self.inky_display.WIDTH / 2) - (width / 2)
-        yPosition = (self.inky_display.HEIGHT / 2) - (height / 2)
+        x = (self.inky_display.WIDTH / 2) - (width / 2)
+        y = (self.inky_display.HEIGHT / 2) - (height / 2)
 
-        self.write_text(text, xPosition, yPosition, font)
+        img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
+        draw = ImageDraw.Draw(img)
+
+        draw.text((x, y), text, self.inky_display.BLACK, font)
+        self.inky_display.set_image(img)
+        self.inky_display.show()
     
     def write(self, label, value):
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
