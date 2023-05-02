@@ -8,17 +8,28 @@ class UserInterface:
         self.inky_display = auto()
 
     def show_splash_screen(self):
-        text = "FERGUS"
-        font = self.get_font(50)
-        width, height = font.getsize(text)
-
-        x = (self.inky_display.WIDTH / 2) - (width / 2)
-        y = (self.inky_display.HEIGHT / 2) - (height / 2)
-
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
         draw = ImageDraw.Draw(img)
 
-        draw.text((x, y), text, self.inky_display.BLACK, font)
+        fergus_font = self.get_font(50)
+        fergus_text = "FERGUS"
+        fergus_width, fergus_height = fergus_font.getsize(fergus_text)
+
+        fergus_x = (self.inky_display.WIDTH / 2) - (fergus_width / 2)
+        fergus_y = (self.inky_display.HEIGHT / 2) - (fergus_height / 2)
+
+        draw.text((fergus_x, fergus_y), fergus_text, self.inky_display.BLACK, fergus_font)
+
+        connection_font = self.get_font(20)
+        connecting_text = "Connecting to..."
+        connection_width, connection_height = connection_font.getsize(text)
+
+        connection_x = (self.inky_display.WIDTH / 2) - (connection_width / 2)
+        connection_y = (self.inky_display.HEIGHT / 4) - (connection_height / 2)
+
+        draw.text((connection_x, connection_y), connecting_text, self.inky_display.BLACK, connection_font)
+        
+
         self.inky_display.set_image(img)
         self.inky_display.show()
     
