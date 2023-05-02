@@ -21,13 +21,13 @@ class UserInterface:
         draw.text((fergus_x, fergus_y), fergus_text, self.inky_display.BLACK, fergus_font)
 
         connection_font = self.get_font(20)
-        connecting_text = "Connecting to..."
-        connection_width, connection_height = connection_font.getsize(text)
+        connection_text = "Connecting to..."
+        connection_width, connection_height = connection_font.getsize(connection_text)
 
         connection_x = (self.inky_display.WIDTH / 2) - (connection_width / 2)
         connection_y = (self.inky_display.HEIGHT / 4) - (connection_height / 2)
 
-        draw.text((connection_x, connection_y), connecting_text, self.inky_display.BLACK, connection_font)
+        draw.text((connection_x, connection_y), connection_text, self.inky_display.BLACK, connection_font)
         
 
         self.inky_display.set_image(img)
