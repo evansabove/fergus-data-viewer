@@ -30,8 +30,9 @@ if __name__ == "__main__":
 
         while True:
             if(live_data['COOLANT_TEMP'] is None):
+                time.sleep(1)
                 continue
-            
+
             ui.write('Coolant', str(live_data['COOLANT_TEMP']) + "°C")
             time.sleep(10)
 
